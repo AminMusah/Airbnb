@@ -21,6 +21,24 @@ const userSchema = new mongoose.Schema(
     favourites: {
       type: [],
     },
+    accounts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Account",
+      },
+    ],
+    listings: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Listing",
+      },
+    ],
+    reservations: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Reservation",
+      },
+    ],
   },
   { timestamps: true }
 );

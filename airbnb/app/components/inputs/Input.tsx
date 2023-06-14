@@ -29,12 +29,12 @@ const Input: React.FC<InputProps> = ({
       {formatPrice && (
         <BiDollar
           size={24}
-          //   className="
-          //       text-neutral-700
-          //       absolute
-          //       top-5
-          //       left-2
-          //     "
+          className="
+                text-neutral-700
+                absolute
+                top-5
+                left-2
+              "
         />
       )}
       <input
@@ -46,8 +46,8 @@ const Input: React.FC<InputProps> = ({
         className={`
           peer
           w-full
-          p-4
-          pt-6 
+          p-2
+          pt-4
           font-light 
           bg-white 
           border-2
@@ -64,7 +64,7 @@ const Input: React.FC<InputProps> = ({
       <label
         className={`
           absolute 
-          text-md
+          text-xs
           duration-150 
           transform 
           -translate-y-3 

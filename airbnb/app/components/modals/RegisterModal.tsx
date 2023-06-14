@@ -5,7 +5,7 @@ import { AiFillGithub } from "react-icons/ai";
 // import { signIn } from "next-auth/react";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
-import { toast } from "react-hot-toast";
+// import { toast } from "react-hot-toast";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 // import useLoginModal from "@/app/hooks/useLoginModal";
@@ -39,12 +39,12 @@ const RegisterModal = () => {
     axios
       .post("/api/register", data)
       .then(() => {
-        toast.success("Registered!");
+        // toast.success("Registered!");
         registerModal.onClose();
         // loginModal.onOpen();
       })
       .catch((error) => {
-        toast.error("error");
+        // toast.error("error");
       })
       .finally(() => {
         setIsLoading(false);
@@ -90,18 +90,18 @@ const RegisterModal = () => {
   const footerContent = (
     <div className="flex flex-col gap-4 mt-3">
       <hr />
-      {/* <Button
+      <Button
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        // onClick={() => signIn("google")}
-      /> */}
-      {/* <Button
+        onClick={() => {}}
+      />
+      <Button
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        // onClick={() => signIn("github")}
-      /> */}
+        onClick={() => {}}
+      />
       <div
         className="
             text-neutral-500
