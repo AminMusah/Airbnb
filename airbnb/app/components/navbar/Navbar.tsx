@@ -1,18 +1,12 @@
 "use client";
 
-// import { SafeUser } from "@/app/types";
-
-// import Categories from "./Categories";
+import Categories from "./Categories";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
-// interface NavbarProps {
-//   currentUser?: SafeUser | null;
-// }
-
-const Navbar = ({}) => {
+const Navbar = () => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div

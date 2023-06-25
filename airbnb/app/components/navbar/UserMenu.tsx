@@ -7,16 +7,11 @@ import { useRouter } from "next/navigation";
 
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-// import useRentModal from "@/app/hooks/useRentModal";
-// import { SafeUser } from "@/app/types";
+import useRentModal from "@/app/hooks/useRentModal";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
 import { UserContext } from "@/app/context/UserContext";
-
-// interface UserMenuProps {
-//   currentUser?: SafeUser | null
-// }
 
 const UserMenu = () => {
   let { isAuth, setIsAuth } = useContext(UserContext);
@@ -25,7 +20,7 @@ const UserMenu = () => {
 
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
-  //   const rentModal = useRentModal();
+  const rentModal = useRentModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,19 +33,19 @@ const UserMenu = () => {
     localStorage.clear();
   };
 
-  //   const onRent = useCallback(() => {
-  //     if (!currentUser) {
-  //       return loginModal.onOpen();
-  //     }
+  const onRent = useCallback(() => {
+    if (!isAuth) {
+      return loginModal.onOpen();
+    }
 
-  //     rentModal.onOpen();
-  //   }, [loginModal, rentModal, currentUser]);
+    rentModal.onOpen();
+  }, [loginModal, rentModal, isAuth]);
 
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div
-          onClick={() => {}}
+          onClick={onRent}
           className="
             hidden
             md:block
@@ -124,7 +119,7 @@ const UserMenu = () => {
                   label="My properties"
                   onClick={() => router.push("/properties")}
                 />
-                <MenuItem label="Airbnb your home" onClick={() => {}} />
+                <MenuItem label="Airbnb your home" onClick={rentModal.onOpen} />
                 <hr />
                 <MenuItem label="Logout" onClick={signOut} />
               </>

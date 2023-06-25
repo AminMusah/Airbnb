@@ -6,6 +6,7 @@ import ToasterProvider from "./components/providers/ToastProvider";
 import AuthProvider from "./components/providers/AuthProvider";
 import LoginModal from "./components/modals/LoginModal";
 import UserProvider from "./context/UserContext";
+import RentModal from "./components/modals/RentModal";
 const font = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
             <ToasterProvider />
             <LoginModal />
             <RegisterModal />
+            <RentModal />
             <Navbar />
             {children}
           </AuthProvider>
